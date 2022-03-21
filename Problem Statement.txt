@@ -1,0 +1,52 @@
+UNIT 4 C3 EVALUATION PROBLEM
+we will try to create a small books system ( just backend APIs ) and it will have below models
+
+User Model
+
+firstName (string, required, minimum length 3 and maximum length 30)
+lastName (string, optional, if given then minimum length 3 and maximum length 30)
+age (integer, required, should be between 1 and 150)
+email (string, required, unique)
+profileImages: (array of imageUrls and atleast 1 profile image is required)
+timestamps (string, required)
+
+
+Book Model
+
+likes (integer, minimum default is 0)
+coverImage (string, required and it can be 1 only)
+content ( string, required)
+timestamps (string, required)
+
+Publication Model ( Publication is the company which releases the book )
+name ( references post collection)
+timestamps (string, required)
+
+
+
+Comment Model
+
+body ( string, required)
+timestamps (string, required)
+
+
+Note :- all validations should be done at express level and mongoose level as taught in the validations lecture.
+
+
+RELATIONSHIPS
+There will be a relationship between User and Book ( Author is what we want )
+
+There will be a relationship between Book and Publication ( 1 Book can be released by only 1 Publication )
+
+There will be a relationship between User and Comment
+
+There will be a relationship between Book and Comment
+
+TASKS
+
+create a post route for users to register.
+create a post route to create books with 1 cover image.
+create a post route to create comments.
+a user should be able to login to his account.
+a user can only see 10 posts at a time.
+a user can only like a post once and if he tries to like it again then it will get removed from likes count.
